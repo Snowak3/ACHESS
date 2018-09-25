@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import edu.wisc.chess.achess.Helpers.DatabaseHelper;
 import edu.wisc.chess.achess.Helpers.OkHTTPHelper;
-import okhttp3.OkHttpClient;
 
 /**
  * This method is tied to the Login Activity and handles all the functions associated with logging
@@ -25,7 +24,6 @@ import okhttp3.OkHttpClient;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText mEditTextUsername, mEditTextPassword;
-    private Button loginButton;
     private DatabaseHelper DBHelper = new DatabaseHelper();
     private OkHTTPHelper okhttpHelper = new OkHTTPHelper();
 
@@ -94,9 +92,9 @@ public class LoginActivity extends AppCompatActivity {
      * This method sets the onClick function of the login button on the Login Activity.
      */
     private void setUpButtons() {
-        loginButton = (Button)findViewById(R.id.login_button);
-        mEditTextUsername = (EditText)findViewById(R.id.username);
-        mEditTextPassword = (EditText)findViewById(R.id.password);
+        Button loginButton = findViewById(R.id.login_button);
+        mEditTextUsername = findViewById(R.id.username);
+        mEditTextPassword = findViewById(R.id.password);
         // Object to be passed in order to check for an active internet connection.
         final ConnectivityManager connectivityManager
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -129,7 +127,7 @@ public class LoginActivity extends AppCompatActivity {
                     String token = okhttpHelper.attemptLogin(mEditTextUsername.getText().toString().trim(),
                                             mEditTextPassword.getText().toString().trim());
 
-                    if (token != "error" && token != null) {
+                    if (!token.equals("error") && !token.equals(null)) {
 
                         // Store the authorization token in the database.
                         DBHelper.saveCredentials(token);
