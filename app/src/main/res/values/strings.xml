@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">A-CHESS</string>
+    <string name="title_activity_login">Sign In</string>
+
+    <!-- Strings related to login -->
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_username">This username is invalid</string>
+    <string name="error_invalid_username_or_password">Error: Invalid username or password</string>
+    <string name="error_username_required">Please enter a username</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_password_required">Please enter a password</string>
+    <string name="error_reenter_password_required">Please re-enter your password</string>
+    <string name="error_confirm_password">Passwords are not the same</string>
+    <string name="error_creating_user">Error occured while trying to create user</string>
+    <string name="error_logging_in">Error occured while trying to log in, please try again</string>
+    <string name="internet_connection_required">An Internet connection is required to login.
+        Please connect to Wifi or a cellular network</string>
+
+    <string name="prompt_username">Enter your username</string>
+    <string name="prompt_password">Enter your password</string>
+    <string name="edit_reenter_password">Re-enter your password</string>
+    <string name="app_version">A-CHESS v1.0.0</string>
+    <string name="logout">Logout</string>
+
+    <!-- Strings related to labels -->
+    <string name="login_header">Please Login</string>
+    <string name="signup_header">Sign Up</string>
+    <string name="login_username_label">Username</string>
+    <string name="login_password_label">Password</string>
+    <string name="login_confirm_password_label">Confirm Password</string>
+    <string name="button_login_label">Login</string>
+    <string name="button_signup_label">Signup</string>
+    <string name="button_already_a_member_label">Already a member? \nSign in</string>
+</resources>
