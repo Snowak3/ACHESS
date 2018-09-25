@@ -160,7 +160,7 @@ public class SplashScreen extends AppCompatActivity {
                 }
                 // Credentials pass initial checks.
                 else {
-                    // FIXME: This whole else statement may not be right, it hasn't been tested.
+                    // FIXME: This whole else statement may not be right, it hasn't been tested yet.
                     String token = okhttpHelper.attemptSignUp(mEditTextUsername.getText().toString().trim(),
                                             mEditTextPassword.getText().toString().trim());
 

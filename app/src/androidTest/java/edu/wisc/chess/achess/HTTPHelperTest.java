@@ -1,8 +1,5 @@
 package edu.wisc.chess.achess;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-
 import org.junit.Test;
 
 import edu.wisc.chess.achess.Helpers.OkHTTPHelper;

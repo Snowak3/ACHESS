@@ -26,13 +26,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText mEditTextUsername, mEditTextPassword;
     private Button loginButton;
-    private OkHttpClient client;
     private DatabaseHelper DBHelper = new DatabaseHelper();
     private OkHTTPHelper okhttpHelper = new OkHTTPHelper();
-    // Object to be passed in order to check for an active internet connection.
-    final ConnectivityManager connectivityManager
-            = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-    static boolean result = false;
 
     /**
      * This method sets the content view to the Login Activity, calls a method to initialize the
@@ -95,10 +90,6 @@ public class LoginActivity extends AppCompatActivity {
         positiveButton.setLayoutParams(positiveButtonLL);
     }
 
-    public ConnectivityManager getConnectivityManager() {
-        return connectivityManager;
-    }
-
     /**
      * This method sets the onClick function of the login button on the Login Activity.
      */
@@ -106,12 +97,15 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = (Button)findViewById(R.id.login_button);
         mEditTextUsername = (EditText)findViewById(R.id.username);
         mEditTextPassword = (EditText)findViewById(R.id.password);
+        // Object to be passed in order to check for an active internet connection.
+        final ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 // No internet connection detected.
-                if (!(okhttpHelper.hasActiveInternetConnection(getConnectivityManager()))) {
+                if (!(okhttpHelper.hasActiveInternetConnection(connectivityManager))) {
                     displayDialog(getResources().getString(R.string.internet_connection_required));
                 }
                 // No username entered in username field.
